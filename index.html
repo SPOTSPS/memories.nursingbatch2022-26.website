@@ -4,39 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sirius Guys B.Sc Nursing Final Year</title>
-    
     <style>
-        /* 1. பிரவுசரின் டீஃபால்ட் இடைவெளிகளை நீக்குதல் */
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* தேவையற்ற ஸ்க்ரோல் பாரை தவிர்க்க */
-            background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-
-        /* 2. Iframe-ஐ ஸ்கிரீன் முழுவதும் கச்சிதமாகப் பொருத்துதல் */
-        .responsive-iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            border: none; /* பார்டர் கோடுகளை நீக்க */
+        .container {
+            padding: 40px;
+            border-radius: 15px;
+            background: #2a2a2a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 400px;
         }
+        h1 { color: #f39c12; margin-bottom: 5px; }
+        h3 { color: #aaaaaa; margin-top: 0; margin-bottom: 30px; font-weight: normal; }
+        
+        .launch-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            width: 80%;
+        }
+        .launch-btn:hover { background-color: #218838; transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <iframe 
-        src="https://script.google.com/macros/s/AKfycbxkTkGq_8jTZrD9MCZQgv37NHSj-lmt6JCrfeoAVT6EEtU94ObSK80fb0bA9nGV3pk-SQ/exec" 
-        class="responsive-iframe" 
-        allowfullscreen 
-        title="TMIS Portal">
-    </iframe>
+    <div class="container">
+        <h1>Sirius Guys</h1>
+        <h3>TMIS Portal</h3>
+        <p style="margin-bottom: 30px; color: #cccccc; font-size: 14px;">
+            பாதுகாப்பு காரணங்களுக்காக போர்ட்டல் தனிப் பக்கத்தில் திறக்கப்படும்.
+        </p>
+        
+        <a href="https://script.google.com/macros/s/AKfycbyjcJurNUtsiFbDAYuYwibJnK2cFLZ9VOrn8Whph29hFNAcvSk6me1BuSfYHZ5R9Ck2jQ/exec" class="launch-btn">
+            உள்ளே நுழைய
+        </a>
+    </div>
 
 </body>
 </html>

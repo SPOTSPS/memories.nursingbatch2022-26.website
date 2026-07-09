@@ -1,131 +1,125 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirius Guys B.Sc Nursing Final Year</title>
+    <title>System Maintenance - Sirius Guys TMIS</title>
     <style>
         body {
             margin: 0;
             padding: 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
+            background-color: #0d1117; /* IT Dark Theme */
+            color: #c9d1d9;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #121212;
-            color: #ffffff;
+            min-height: 100vh;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .alert-box {
+            background-color: #161b22;
+            border: 1px solid #3b82f6; /* Professional Blue Border */
+            border-top: 5px solid #3b82f6;
+            border-radius: 8px;
+            padding: 35px 30px;
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+        }
+        .icon-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .icon-container span {
+            font-size: 45px;
+        }
+        .header-title {
+            color: #3b82f6;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        .content-en {
+            font-size: 15px;
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 20px;
+            color: #e6edf3;
+        }
+        .content-ta {
+            font-size: 15px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #a5d6ff;
+        }
+        .divider {
+            height: 1px;
+            background-color: #30363d;
+            margin: 30px 0;
+        }
+        .highlight {
+            color: #60a5fa;
+            font-weight: bold;
+        }
+        .eta-box {
+            background-color: #21262d;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #10b981; /* Success Green */
             text-align: center;
         }
-        .container {
-            padding: 40px 30px;
-            border-radius: 12px;
-            background: #1e1e1e;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            width: 100%;
-            max-width: 480px;
-            border-top: 4px solid #f39c12;
-        }
-        h1 { color: #f39c12; margin-bottom: 5px; font-size: 28px; }
-        h3 { color: #aaaaaa; margin-top: 0; margin-bottom: 25px; font-weight: 400; letter-spacing: 1px; font-size: 16px;}
-        
-        .status-badge {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #fff;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 13px;
+        .eta-title {
+            color: #10b981;
             font-weight: bold;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
-
-        .info-text-ta {
-            color: #dddddd;
-            font-size: 15px;
-            line-height: 1.6;
-            text-align: justify;
-            text-align-last: center;
-            margin-bottom: 15px;
+        .eta-time {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
         }
-
-        .info-text-en {
-            color: #999999;
-            font-size: 13px;
+        .eta-time-ta {
+            color: #cccccc;
+            font-size: 14px;
+            margin-top: 8px;
             line-height: 1.5;
-            text-align: justify;
-            text-align-last: center;
-            margin-bottom: 30px;
-        }
-
-        .divider {
-            width: 40px;
-            height: 2px;
-            background-color: #444;
-            margin: 20px auto;
-            border-radius: 2px;
-        }
-        
-        .launch-btn {
-            background-color: #007bff;
-            color: white;
-            padding: 14px 20px;
-            font-size: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s ease;
-            width: 90%;
-            margin: 0 auto;
-            letter-spacing: 0.5px;
-        }
-        .launch-btn:hover { 
-            background-color: #0056b3; 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); 
-        }
-        .btn-en { 
-            display: block; 
-            font-size: 12px; 
-            font-weight: normal; 
-            margin-top: 4px; 
-            color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Sirius Guys</h1>
-        <h3>TMIS Portal</h3>
+    <div class="alert-box">
+        <div class="icon-container">
+            <span>⚙️</span>
+        </div>
+        <div class="header-title">Scheduled System Maintenance</div>
         
-        <!-- இருமொழி சர்வர் பேட்ஜ் -->
-        <div class="status-badge">⚙️ சர்வர் பராமரிப்பு / System Maintenance</div>
-
-        <!-- தமிழ் விளக்க உரை -->
-        <p class="info-text-ta">
-            திட்டமிடப்பட்ட சர்வர் பராமரிப்பு மற்றும் பாதுகாப்பு மேம்படுத்தல் பணிகள் நடைபெற்று வருவதால், நமது மெயின் சர்வர்கள் தற்போது முழு பயன்பாட்டில் (100% Capacity) இயங்கி வருகின்றன. எனவே, உங்களுக்குத் தடையற்ற மற்றும் பாதுகாப்பான சேவையை உறுதிசெய்ய, Sirius Guys போர்ட்டல் ஒரு தனி பாதுகாப்பான பக்கத்தில் திறக்கப்படும்.
-        </p>
+        <div class="content-en">
+            <strong>Attention Friends:</strong><br><br>
+            Please be informed that the Sirius Guys portal has been temporarily taken offline for scheduled server maintenance. This proactive measure is being taken to <span class="highlight">update missing media files (photographs)</span> and implement routine security enhancements. We are optimizing the server to ensure a safe and smooth user experience.
+        </div>
 
         <div class="divider"></div>
 
-        <!-- ஆங்கில விளக்க உரை -->
-        <p class="info-text-en">
-            Due to scheduled maintenance and security upgrades, our main servers are currently operating at maximum capacity. To ensure uninterrupted and secure access, the Sirius Guys Portal will open in a dedicated external window.
-        </p>
-        
-        <!-- பட்டன் (இருமொழியிலும்) -->
-        <a href="https://script.google.com/macros/s/AKfycbyjcJurNUtsiFbDAYuYwibJnK2cFLZ9VOrn8Whph29hFNAcvSk6me1BuSfYHZ5R9Ck2jQ/exec" class="launch-btn" target="_blank">
-            பாதுகாப்பான போர்ட்டலுக்குச் செல்லவும்
-            <span class="btn-en">PROCEED TO SECURE PORTAL</span>
-        </a>
-    </div>
+        <div class="content-ta">
+            <strong>நண்பர்களின் கவனத்திற்கு :</strong><br><br>
+            தளத்தில் <span class="highlight">புகைப்படங்களை முழுமையாக இணைக்கும் பணிகளுக்காகவும்</span>, உங்களின் தரவுப் பாதுகாப்பை (Data Security) மேம்படுத்தும் காரணங்களுக்காகவும் இந்த வலைத்தளம் தற்காலிகமாக நிறுத்தி வைக்கப்பட்டுள்ளது. சிறந்த சேவையை வழங்குவதற்காக சர்வர் மேம்படுத்தப்பட்டு வருகிறது.
+        </div>
 
+        <div class="eta-box">
+            <div class="eta-title">⏳ Back to Normal Operations In</div>
+            <div class="eta-time">24 to 48 Hours</div>
+            <div class="eta-time-ta">
+                (24 முதல் 48 மணி நேரத்திற்குள் பராமரிப்புப் பணிகள் நிறைவடைந்து, தளம் மீண்டும் பழையபடி இயங்கத் தொடங்கும்)
+            </div>
+        </div>
+    </div>
 </body>
 </html>

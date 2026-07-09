@@ -1,125 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Maintenance - Sirius Guys TMIS</title>
+    <title>Sirius Guys B.Sc Nursing Final Year</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            background-color: #0d1117; /* IT Dark Theme */
-            color: #c9d1d9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .alert-box {
-            background-color: #161b22;
-            border: 1px solid #3b82f6; /* Professional Blue Border */
-            border-top: 5px solid #3b82f6;
-            border-radius: 8px;
-            padding: 35px 30px;
-            max-width: 650px;
-            width: 100%;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
-        }
-        .icon-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .icon-container span {
-            font-size: 45px;
-        }
-        .header-title {
-            color: #3b82f6;
-            font-size: 22px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-        .content-en {
-            font-size: 15px;
-            line-height: 1.7;
-            text-align: justify;
-            margin-bottom: 20px;
-            color: #e6edf3;
-        }
-        .content-ta {
-            font-size: 15px;
-            line-height: 1.8;
-            text-align: justify;
-            color: #a5d6ff;
-        }
-        .divider {
-            height: 1px;
-            background-color: #30363d;
-            margin: 30px 0;
-        }
-        .highlight {
-            color: #60a5fa;
-            font-weight: bold;
-        }
-        .eta-box {
-            background-color: #21262d;
-            border-radius: 6px;
-            padding: 20px;
-            margin-top: 30px;
-            border-left: 4px solid #10b981; /* Success Green */
-            text-align: center;
-        }
-        .eta-title {
-            color: #10b981;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-        .eta-time {
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .eta-time-ta {
-            color: #cccccc;
-            font-size: 14px;
-            margin-top: 8px;
-            line-height: 1.5;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4; }
+        #content-area { display: none; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        h2 { color: #28a745; }
     </style>
 </head>
 <body>
-    <div class="alert-box">
-        <div class="icon-container">
-            <span>⚙️</span>
-        </div>
-        <div class="header-title">Scheduled System Maintenance</div>
-        
-        <div class="content-en">
-            <strong>Attention Friends:</strong><br><br>
-            Please be informed that the Sirius Guys portal has been temporarily taken offline for scheduled server maintenance. This proactive measure is being taken to <span class="highlight">update missing media files (photographs)</span> and implement routine security enhancements. We are optimizing the server to ensure a safe and smooth user experience.
-        </div>
 
-        <div class="divider"></div>
-
-        <div class="content-ta">
-            <strong>நண்பர்களின் கவனத்திற்கு :</strong><br><br>
-            தளத்தில் <span class="highlight">புகைப்படங்களை முழுமையாக இணைக்கும் பணிகளுக்காகவும்</span>, உங்களின் தரவுப் பாதுகாப்பை (Data Security) மேம்படுத்தும் காரணங்களுக்காகவும் இந்த வலைத்தளம் தற்காலிகமாக நிறுத்தி வைக்கப்பட்டுள்ளது. சிறந்த சேவையை வழங்குவதற்காக சர்வர் மேம்படுத்தப்பட்டு வருகிறது.
-        </div>
-
-        <div class="eta-box">
-            <div class="eta-title">⏳ Back to Normal Operations In</div>
-            <div class="eta-time">24 to 48 Hours</div>
-            <div class="eta-time-ta">
-                (24 முதல் 48 மணி நேரத்திற்குள் பராமரிப்புப் பணிகள் நிறைவடைந்து, தளம் மீண்டும் பழையபடி இயங்கத் தொடங்கும்)
-            </div>
-        </div>
+    <div id="content-area">
+        <h2>✅ TMIS டேட்டா வெற்றிகரமாக இணைக்கப்பட்டது!</h2>
+        <p>சர்வரில் இருந்து தரவுகள் எந்த பிழையும் இல்லாமல் வந்துவிட்டன.</p>
+        <p style="color: red; font-size: 14px;">(குறிப்பு: உங்களின் முழுமையான டிசைன் இங்கே வர வேண்டும்)</p>
     </div>
+
+    <script>
+        // 1. பக்கம் ஓபன் ஆனவுடனே SweetAlert2 லோடிங் சுற்ற ஆரம்பிக்கும்
+        Swal.fire({
+            title: 'தரவுகள் ஏற்றப்படுகின்றன...',
+            text: 'தயவுசெய்து காத்திருக்கவும்',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        // 2. நீங்கள் கொடுத்த புதிய API லிங்க்
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxqcbbvZPnrMfzqz73b9Z5ovAoons3pAHjavHScFEh0OmRbjFBVZhfFm25H2CNLAQvC/exec";
+
+        // 3. Fetch API மூலம் டேட்டாவை வாங்குதல்
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                // டேட்டா வந்தவுடன் லோடிங்கை நிறுத்துகிறோம்
+                Swal.close();
+                
+                // டேட்டாவை கன்சோலில் செக் செய்ய (F12)
+                console.log("கிடைத்த டேட்டா:", data);
+
+                // டிசைனை திரையில் காட்டுகிறோம்
+                document.getElementById('content-area').style.display = 'block';
+
+                /* இந்த இடத்தில் தான் data.students, data.photos, 
+                   data.faculty போன்ற தகவல்களை உங்களின் டிசைனுக்குள் செலுத்த வேண்டும்.
+                */
+            })
+            .catch(error => {
+                Swal.fire('பிழை!', 'சர்வரைத் தொடர்புகொள்வதில் சிக்கல். மீண்டும் முயற்சிக்கவும்.', 'error');
+            });
+    </script>
+
 </body>
 </html>

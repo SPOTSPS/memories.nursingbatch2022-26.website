@@ -1,343 +1,42 @@
 <!DOCTYPE html>
 <html lang="ta">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Sirius Guys</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirius Guys B.Sc Nursing Final Year</title>
+    
+    <style>
+        /* 1. பிரவுசரின் டீஃபால்ட் இடைவெளிகளை நீக்குதல் */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* தேவையற்ற ஸ்க்ரோல் பாரை தவிர்க்க */
+            background-color: #f4f4f4;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- SweetAlert2 Library சேர்க்கப்பட்டுள்ளது -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<style>
-  /* Premium College Portal Theme */
-  :root {
-    --primary: #004494;
-    --secondary: #0056b3;
-    --accent: #ffb700;
-    --text-dark: #1f2937;
-    --text-light: #4b5563;
-    --bg: #f4f7f6;
-    --card-bg: #ffffff;
-    --border-color: #e2e8f0;
-  }
- 
-  * { box-sizing: border-box; }
- 
-  body {
-    margin: 0; font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text-dark); overflow-x: hidden;
-    display: flex; flex-direction: column; min-height: 100vh;
-  }
- 
-  .header-container { position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-  .header-top { background: var(--primary); color: white; display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; }
-  .logo-box { display: flex; align-items: center; gap: 10px; flex-grow: 1; overflow: hidden; }
-  .logo-box img { height: 42px; width: 42px; border-radius: 50%; object-fit: cover; border: 2px solid white; background: white; flex-shrink: 0; }
-  .logo-box h1 { margin: 0; font-size: 19px; font-weight: 700; text-transform: uppercase; white-space: nowrap; }
- 
-  .action-box { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-  .lang-btn { background: #ffffff; color: var(--primary); border: none; padding: 6px 12px; font-weight: 700; font-size: 13px; border-radius: 4px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-  .lang-btn:hover { background: var(--accent); color: #000; }
-  .menu-btn { font-size: 28px; cursor: pointer; background: none; border: none; color: white; padding: 0; margin-left: 5px; }
-
-  .header-search { background: var(--secondary); padding: 10px 15px; display: flex; justify-content: center; border-top: 1px solid rgba(255,255,255,0.1); }
-  .search-wrapper { position: relative; width: 100%; max-width: 700px; }
-  .search-wrapper i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #666; font-size: 14px; }
-  .search-input { width: 100%; padding: 9px 10px 9px 35px; border-radius: 4px; border: none; outline: none; font-size: 14px; background: #fff; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
-
-  .dropdown-menu { display: none; background-color: var(--primary); width: 100%; position: absolute; top: 100%; left: 0; box-shadow: 0 10px 15px rgba(0,0,0,0.2); z-index: 999; border-top: 1px solid rgba(255,255,255,0.2); }
-  .dropdown-menu.show { display: block; animation: slideDown 0.3s ease; }
-  @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-  .dropdown-menu a { display: block; padding: 16px 20px; color: white; text-decoration: none; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; gap: 12px; cursor: pointer; }
- 
-  .marquee-container { background: #fff; color: #b91c1c; font-weight: 600; padding: 10px; font-size: 14px; border-bottom: 1px solid var(--border-color); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-
-  /* Slider: NO CROPPING, NO BLACK BARS. White background with fully visible image */
-  .slider { width: 100%; height: 260px; overflow: hidden; position: relative; background: #ffffff; border-bottom: 1px solid var(--border-color); }
-  @media (min-width: 768px) { .slider { height: 480px; } }
-  .slider-img { position: absolute; width: 100%; height: 100%; object-fit: contain; object-position: center; z-index: 2; transition: opacity 0.8s ease-in-out; opacity: 0; padding: 5px; }
-  .slider-img.active { opacity: 1; }
-
-  .welcome-card { background: var(--card-bg); padding: 40px 20px; text-align: center; border-bottom: 2px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-  .college-name { font-size: 22px; color: var(--primary); font-weight: 900; text-transform: uppercase; margin: 0 0 10px 0; line-height: 1.4; }
- 
-  /* Batch Badge aligned properly */
-  .batch-badge { display: inline-block; background: var(--accent); color: #000; padding: 6px 20px; border-radius: 20px; font-size: 15px; font-weight: 700; margin-bottom: 30px; }
- 
-  /* Title and Description structured to ALWAYS stay below the badge */
-  .welcome-content-box { display: block; width: 100%; }
-  .welcome-card h2 { display: inline-block; color: var(--secondary); margin: 0 0 15px 0; font-size: 26px; font-weight: 700; padding-bottom: 8px; border-bottom: 3px solid var(--secondary); }
-  .welcome-card p { font-size: 16px; color: var(--text-dark); line-height: 1.9; margin: 0 auto; max-width: 900px; font-weight: 500; text-align: center; }
-
-  .quote-section { background: #eef2f6; padding: 35px 20px; text-align: center; border-bottom: 1px solid var(--border-color); }
-  .quote-text { font-size: 18px; color: var(--primary); font-weight: 700; font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-  .quote-author { font-size: 15px; color: var(--text-light); margin-top: 15px; font-weight: 600; }
-
-  .main-content { padding: 20px 15px 50px; max-width: 1200px; margin: 0 auto; width: 100%; }
-  .section { display: none; }
-  .active-section { display: block; animation: fadeIn 0.3s; }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-  .section-header { font-size: 22px; color: var(--primary); font-weight: 700; margin: 15px 0 25px 0; padding-bottom: 8px; border-bottom: 3px solid var(--accent); display: inline-block; text-transform: uppercase; }
-
-  .grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
-  @media (min-width: 768px) { .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; } }
- 
-  .card { background: var(--card-bg); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; transition: 0.3s; }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: var(--primary); }
- 
-  /* Image Grid: NO CROPPING. Full image visible inside a white box */
-  .media-wrapper { position: relative; width: 100%; height: 280px; background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--border-color); padding: 5px; }
-  .main-media { width: 100%; height: 100%; object-fit: contain; object-position: center; z-index: 2; }
- 
-  .card-content { padding: 18px 20px; text-align: left; flex-grow: 1; background: #fff; }
-  .card-title { font-weight: 700; font-size: 17px; color: #1e40af; margin: 0 0 10px 0; padding-bottom: 10px; border-bottom: 1px dashed var(--secondary); text-transform: capitalize; }
-  .card-desc { font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0; font-weight: 500; }
-
-  /* Compact Footer */
-  .footer { background: #111827; color: white; text-align: center; padding: 25px 15px; margin-top: auto; border-top: 4px solid var(--accent); }
-  .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
-  .social-btn { display: flex; align-items: center; gap: 8px; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; border: none; }
-  .social-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 10px rgba(0,0,0,0.3); }
-  .social-btn.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-  .social-btn.wa { background: #25D366; }
-  .footer p { margin: 10px 0 0 0; font-size: 13px; color: #9ca3af; }
-
-  @media (min-width: 768px) {
-    .header-top { padding: 12px 4%; }
-    .header-search { padding: 12px 4%; justify-content: flex-end; background: var(--primary); border-top: none; }
-    .welcome-card { padding: 50px 4%; }
-    .welcome-card h2 { font-size: 30px; }
-    .college-name { font-size: 26px; }
-  }
-</style>
+        /* 2. Iframe-ஐ ஸ்கிரீன் முழுவதும் கச்சிதமாகப் பொருத்துதல் */
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* பார்டர் கோடுகளை நீக்க */
+        }
+    </style>
 </head>
 <body>
 
-<div class="header-container">
-  <div class="header-top">
-    <div class="logo-box">
-      <img id="ui-logo" src="https://i.imgur.com/EiZrP93.jpeg" alt="Logo" onerror="this.src='https://via.placeholder.com/50?text=Logo'">
-      <h1 id="ui-title">SIRIUS GUYS</h1>
-    </div>
-    <div class="action-box">
-      <button class="lang-btn" id="lang-btn" onclick="toggleLanguage()">தமிழ்</button>
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    </div>
-  </div>
-  <div class="header-search">
-    <div class="search-wrapper">
-      <i class="fas fa-search"></i>
-      <input type="text" class="search-input" id="search-input" placeholder="Search..." onkeyup="searchCards()">
-    </div>
-  </div>
-  <div id="dropdownMenu" class="dropdown-menu">
-    <a onclick="showSection('home')"><i class="fas fa-home"></i> <span id="txt_menu_home">Home</span></a>
-    <a onclick="showSection('faculty')"><i class="fas fa-chalkboard-teacher"></i> <span id="txt_menu_faculty">Faculty Details</span></a>
-    <a onclick="showSection('students')"><i class="fas fa-user-graduate"></i> <span id="txt_menu_students">Our Memories</span></a>
-    <a onclick="showSection('photos')"><i class="fas fa-images"></i> <span id="txt_menu_photos">Gallery</span></a>
-    <a onclick="showSection('videos')"><i class="fas fa-video"></i> <span id="txt_menu_videos">Videos</span></a>
-  </div>
-</div>
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbxkTkGq_8jTZrD9MCZQgv37NHSj-lmt6JCrfeoAVT6EEtU94ObSK80fb0bA9nGV3pk-SQ/exec" 
+        class="responsive-iframe" 
+        allowfullscreen 
+        title="TMIS Portal">
+    </iframe>
 
-<div class="marquee-container">
-  <marquee id="ui-marquee" scrollamount="5">Welcome to our Memory Portal!</marquee>
-</div>
-
-<div class="page-content">
-  <div id="home" class="section active-section">
-    <div class="hero-section">
-      <div class="slider" id="slider-container"></div>
-    </div>
-   
-    <div class="welcome-card">
-      <h1 class="college-name" id="college-name">Srri Paspo College of Nursing, Dharmapuri</h1>
-      <div class="batch-badge" id="batch-text">2022 - 2026 Batch</div>
-      <div class="welcome-content-box">
-        <h2 id="welcome-title">Title</h2>
-        <p id="welcome-para">Description...</p>
-      </div>
-    </div>
-   
-    <div class="quote-section">
-      <p class="quote-text" id="quote-text">"Nursing is not just a profession..."</p>
-      <p class="quote-author">- Sirius Guys</p>
-    </div>
-  </div>
-
-  <div class="main-content">
-    <div id="faculty" class="section">
-      <h2 class="section-header" id="hdr_faculty">Faculty Details</h2>
-      <div class="grid" id="faculty-grid"></div>
-    </div>
-    <div id="students" class="section">
-      <h2 class="section-header" id="hdr_students">Our Memories</h2>
-      <div class="grid" id="students-grid"></div>
-    </div>
-    <div id="photos" class="section">
-      <h2 class="section-header" id="hdr_photos">Gallery</h2>
-      <div class="grid" id="photos-grid"></div>
-    </div>
-    <div id="videos" class="section">
-      <h2 class="section-header" id="hdr_videos">Videos</h2>
-      <div class="grid" id="videos-grid"></div>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="social-links">
-    <a id="ui-insta" href="#" target="_blank" class="social-btn insta"><i class="fab fa-instagram"></i> <span id="txt-insta">Instagram</span></a>
-    <a id="ui-wa" href="#" target="_blank" class="social-btn wa"><i class="fab fa-whatsapp"></i> <span id="txt-wa">WhatsApp Group</span></a>
-  </div>
-  <p id="ui-designed"></p>
-</div>
-<script>
-  // ஆப் ஸ்கிரிப்ட்டில் இருந்து வரும் டேட்டாவை சேமிக்க ஒரு காலி Variable
-  let db = {};
-  let lang = 'EN';
-  let currentSlide = 0;
-
-  function toggleMenu() { document.getElementById("dropdownMenu").classList.toggle("show"); }
-  window.onclick = function(event) { if (!event.target.matches('.menu-btn') && !event.target.closest('.dropdown-menu')) { document.getElementById("dropdownMenu").classList.remove('show'); } }
-
-  function getMediaEmbed(url, type) {
-    if (!url) return '';
-    if (type === 'Video') {
-      if (url.includes('drive.google.com/file/d/')) {
-        const fileId = url.match(/\/d\/(.+?)\//);
-        if (fileId) return `<iframe class="main-media" src="https://drive.google.com/file/d/${fileId[1]}/preview" allow="autoplay" allowfullscreen frameborder="0"></iframe>`;
-      }
-      return `<video class="main-media" controls preload="metadata"><source src="${url}" type="video/mp4"></video>`;
-    }
-    return `<img src="${url}" class="main-media" loading="lazy" alt="Image">`;
-  }
-
-  function safeGetText(id) {
-    try {
-      const item = db.ui.find(x => x.ID === id);
-      return item ? (lang === 'EN' ? item.EN : item.TA) : id;
-    } catch(e) { return id; }
-  }
-
-  function safeGetContent(type) {
-    try {
-      const item = db.content.find(x => x.Type === type);
-      return item ? (lang === 'EN' ? item.Text_EN : item.Text_TA) : '';
-    } catch(e) { return ''; }
-  }
-
-  function renderApp() {
-    document.getElementById('ui-title').innerText = lang === 'EN' ? 'SIRIUS GUYS' : 'SIRIUS GUYS';
-    document.getElementById('txt_menu_home').innerText = safeGetText('menu_home');
-    document.getElementById('txt_menu_faculty').innerText = safeGetText('menu_faculty');
-    document.getElementById('txt_menu_students').innerText = safeGetText('menu_students');
-    document.getElementById('txt_menu_photos').innerText = safeGetText('menu_photos');
-    document.getElementById('txt_menu_videos').innerText = safeGetText('menu_videos');
-    document.getElementById('ui-designed').innerText = safeGetText('designed_by');
-    document.getElementById('lang-btn').innerText = lang === 'EN' ? 'தமிழ்' : 'English';
-    document.getElementById('search-input').placeholder = lang === 'EN' ? 'Search...' : 'தேடுக...';
-
-    document.getElementById('hdr_faculty').innerText = safeGetText('menu_faculty');
-    document.getElementById('hdr_students').innerText = safeGetText('menu_students');
-    document.getElementById('hdr_photos').innerText = safeGetText('menu_photos');
-    document.getElementById('hdr_videos').innerText = safeGetText('menu_videos');
-
-    document.getElementById('ui-marquee').innerText = safeGetContent('Marquee') || 'Welcome to our Memory Portal!';
-    document.getElementById('welcome-title').innerText = safeGetContent('WelcomeTitle') || (lang === 'EN' ? 'Our Journey' : 'எங்கள் பயணம்');
-    document.getElementById('welcome-para').innerText = safeGetContent('WelcomePara') || '';
-   
-    document.getElementById('college-name').innerText = safeGetContent('CollegeName') || (lang === 'EN' ? 'Srri Paspo College of Nursing, Dharmapuri' : 'ஸ்ரீ பாஸ்போ செவிலியர் கல்லூரி, தர்மபுரி');
-    document.getElementById('batch-text').innerText = safeGetContent('Batch') || (lang === 'EN' ? '2022 - 2026 Batch' : '2022 - 2026 பயிற்சிப் பிரிவு');
-   
-    document.getElementById('quote-text').innerText = safeGetContent('Quote') || (lang === 'EN' ? '"Nursing is not just a profession, it\'s a dedication. Our college memories will live in our hearts forever!"' : '"செவிலியர் பணி ஒரு தொழில் அல்ல, அது ஓர் அர்ப்பணிப்பு. நம் கல்லூரி நினைவுகள் என்றும் நம் நெஞ்சில் வாழும்!"');
-
-    const insta = safeGetContent('Insta') ? db.content.find(x => x.Type === 'Insta') : {};
-    const wa = safeGetContent('WhatsApp') ? db.content.find(x => x.Type === 'WhatsApp') : {};
-    document.getElementById('txt-insta').innerText = lang === 'EN' ? (insta.Text_EN || 'Instagram') : (insta.Text_TA || 'இன்ஸ்டாகிராம்');
-    document.getElementById('ui-insta').href = insta.Link || '#';
-    document.getElementById('txt-wa').innerText = lang === 'EN' ? (wa.Text_EN || 'WhatsApp Group') : (wa.Text_TA || 'வாட்ஸ்அப் குழு');
-    document.getElementById('ui-wa').href = wa.Link || '#';
-
-    if(!document.getElementById('slider-container').innerHTML && db.slider) {
-      let sliderHtml = db.slider.map((s, i) => {
-        if (s.Image_URL && s.Image_URL.trim() !== '') return `<img src="${s.Image_URL}" class="slider-img ${i === 0 ? 'active' : ''}" alt="slide">`;
-        return '';
-      }).join('');
-      document.getElementById('slider-container').innerHTML = sliderHtml;
-      if(sliderHtml === '') document.querySelector('.hero-section').style.display = 'none';
-    }
-
-    if(db.faculty) {
-      document.getElementById('faculty-grid').innerHTML = db.faculty.map(f => `<div class="card"><div class="media-wrapper">${getMediaEmbed(f.Photo_URL, 'Image')}</div><div class="card-content"><div class="card-title">${lang === 'EN' ? f.Name_EN : f.Name_TA}</div><div class="card-desc">${lang === 'EN' ? f.Desig_EN : f.Desig_TA}</div></div></div>`).join('');
-    }
-
-    if(db.students) {
-      document.getElementById('students-grid').innerHTML = db.students.map(s => `<div class="card"><div class="media-wrapper">${getMediaEmbed(s.Photo_URL, 'Image')}</div><div class="card-content"><div class="card-title">${lang === 'EN' ? s.Name_EN : s.Name_TA}</div><div class="card-desc">${lang === 'EN' ? s.About_EN : s.About_TA}</div></div></div>`).join('');
-    }
-
-    if(db.photos) {
-      document.getElementById('photos-grid').innerHTML = db.photos.map(p => `<div class="card"><div class="media-wrapper">${getMediaEmbed(p.Image_URL, 'Image')}</div><div class="card-content"><div class="card-title">${lang === 'EN' ? p.Title_EN : p.Title_TA}</div></div></div>`).join('');
-    }
-
-    if(db.videos) {
-      document.getElementById('videos-grid').innerHTML = db.videos.map(v => `<div class="card"><div class="media-wrapper">${getMediaEmbed(v.Video_URL, 'Video')}</div><div class="card-content"><div class="card-title">${lang === 'EN' ? v.Title_EN : v.Title_TA}</div></div></div>`).join('');
-    }
-  }
-
-  function toggleLanguage() { lang = lang === 'EN' ? 'TA' : 'EN'; renderApp(); }
-
-  function showSection(id) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
-    document.getElementById(id).classList.add('active-section');
-    document.getElementById('search-input').value = '';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.getElementById("dropdownMenu").classList.remove('show');
-  }
-
-  function searchCards() {
-    const input = document.getElementById('search-input').value.toLowerCase();
-    const activeSection = document.querySelector('.active-section');
-    if(!activeSection) return;
-    const cards = activeSection.querySelectorAll('.card');
-    cards.forEach(card => { card.style.display = card.innerText.toLowerCase().includes(input) ? "flex" : "none"; });
-  }
-
-  setInterval(() => {
-    const imgs = document.querySelectorAll('.slider-img');
-    if(imgs.length > 1) {
-      imgs[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % imgs.length;
-      imgs[currentSlide].classList.add('active');
-    }
-  }, 3500);
-
-  // புதிய Fetch API மூலம் டேட்டாவை வாங்கும் பகுதி
-  window.onload = function() {
-      // பக்கம் ஓபன் ஆனதும் லோடிங் காட்ட
-      Swal.fire({
-          title: 'தரவுகள் ஏற்றப்படுகின்றன...',
-          text: 'தயவுசெய்து காத்திருக்கவும்',
-          allowOutsideClick: false,
-          didOpen: () => {
-              Swal.showLoading();
-          }
-      });
-
-      const scriptURL = "https://script.google.com/macros/s/AKfycbxqcbbvZPnrMfzqz73b9Z5ovAoons3pAHjavHScFEh0OmRbjFBVZhfFm25H2CNLAQvC/exec";
-
-      fetch(scriptURL)
-          .then(response => response.json())
-          .then(data => {
-              db = data; // கிடைத்த டேட்டாவை db-ல் சேமிக்கிறோம்
-              Swal.close(); // லோடிங்கை நிறுத்துகிறோம்
-              renderApp(); // டேட்டா வந்தவுடன் டிசைனைக் காட்டுகிறோம்
-          })
-          .catch(error => {
-              Swal.fire('பிழை!', 'சர்வரைத் தொடர்புகொள்வதில் சிக்கல். உங்கள் இன்டர்நெட் இணைப்பைச் சரிபார்த்துவிட்டு மீண்டும் முயற்சிக்கவும்.', 'error');
-          });
-  };
-</script>
 </body>
 </html>
